@@ -1,0 +1,11 @@
+USE shoppefake;
+
+CREATE TABLE CENTRO_DISTRIBUICAO (
+    centro_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL UNIQUE,
+    cidade VARCHAR(80) NOT NULL,
+    uf CHAR(2) NOT NULL,
+    endereco VARCHAR(180) NOT NULL,
+    ativo TINYINT NOT NULL DEFAULT 1,
+    CONSTRAINT ck_centro_ativo CHECK (ativo IN (0, 1))
+);
